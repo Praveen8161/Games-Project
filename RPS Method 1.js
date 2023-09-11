@@ -6,7 +6,7 @@ function start(){
     if(round === 1){
         ans = confirm("Hi Player, Shall we play Rock,Paper,Scissor");
     }else if(round > 1){
-        ans = confirm(`Are you ready for Round ${round}`);
+        ans = confirm(`Play Again`);
     }
     if(ans === true){
         let playerAns = prompt(
@@ -21,8 +21,10 @@ function start(){
                 }else if(playerAns === "p"){
                     playerAns = "paper";
                 }
+
                 let computerAns = computerInput[Math.floor(Math.random()*3)];
                 console.log(computerAns);
+
                 if (computerAns === playerAns){
                     alert(`computer= ${computerAns}
                     Player= ${playerAns}
@@ -58,34 +60,6 @@ function start(){
     }
 }
 
-function player(playerAns){
-    console.log(playerAns);
-    let computerAns = computerInput[Math.floor(Math.random()*3)];
-    console.log(computerAns);
-    if (computerAns === playerAns){
-        alert(`computer= ${computerAns}
-        Player= ${playerAns}
-        Result= Tie`);
-    }else if(computerAns === "rock" && playerAns === "paper"){
-        alert(`computer= ${computerAns}
-        Player= ${playerAns}
-        Result= you win`);
-    }else if(computerAns === "rock" && playerAns === "scissor"){
-        alert(`computer= ${computerAns}
-        Player= ${playerAns}
-        Result= Computer win`);
-    }else if (computerAns === "paper" && playerAns === "scissor"){
-        alert(`computer= ${computerAns}
-        Player= ${playerAns}
-        Result= you win`);
-    }else if (computerAns === "paper" && playerAns === "rock"){
-        alert(`computer= ${computerAns}
-        Player= ${playerAns}
-        Result= Computer win`);
-    }
-    round++;
-    start();
-}
 start();
 
 
